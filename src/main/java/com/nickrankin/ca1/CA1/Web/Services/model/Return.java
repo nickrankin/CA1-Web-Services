@@ -1,7 +1,7 @@
 package com.nickrankin.ca1.CA1.Web.Services.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.nickrankin.ca1.CA1.Web.Services.helpers.Form;
+import com.nickrankin.ca1.CA1.Web.Services.helpers.FormType;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -12,7 +12,7 @@ public class Return {
 
     private @Id @GeneratedValue Long id;
 
-    private Form form;
+    private FormType formType;
 
     @Column(name = "return_year")
     private int returnYear;
@@ -25,9 +25,9 @@ public class Return {
     private Long  userId;
 
     public Return() {}
-    public Return(Long userId, Form form, int returnYear, Double taxPayed) {
+    public Return(Long userId, FormType formType, int returnYear, Double taxPayed) {
         this.userId = userId;
-        this.form = form;
+        this.formType = formType;
         this.returnYear = returnYear;
         this.taxPayed = taxPayed;
     }
@@ -40,8 +40,8 @@ public class Return {
         return id;
     }
 
-    public Form getForm() {
-        return form;
+    public FormType getForm() {
+        return formType;
     }
 
     public int getReturnYear() {
@@ -57,19 +57,19 @@ public class Return {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Return aReturn = (Return) o;
-        return returnYear == aReturn.returnYear && Objects.equals(id, aReturn.id) && form == aReturn.form && Objects.equals(taxPayed, aReturn.taxPayed) && Objects.equals(userId, aReturn.userId);
+        return returnYear == aReturn.returnYear && Objects.equals(id, aReturn.id) && formType == aReturn.formType && Objects.equals(taxPayed, aReturn.taxPayed) && Objects.equals(userId, aReturn.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, form, returnYear, taxPayed, userId);
+        return Objects.hash(id, formType, returnYear, taxPayed, userId);
     }
 
     @Override
     public String toString() {
         return "Return{" +
                 "id=" + id +
-                ", form=" + form +
+                ", form=" + formType +
                 ", returnYear=" + returnYear +
                 ", taxPayed=" + taxPayed +
                 ", userId=" + userId +

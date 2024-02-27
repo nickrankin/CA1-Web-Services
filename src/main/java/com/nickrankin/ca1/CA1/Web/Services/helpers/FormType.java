@@ -1,5 +1,9 @@
 package com.nickrankin.ca1.CA1.Web.Services.helpers;
 
-public enum Form {
-    FORM_11, FORM_1
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+public enum FormType {
+    FORM_11, FORM_1;
+
 }
