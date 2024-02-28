@@ -12,7 +12,8 @@ public class Return {
 
     private @Id @GeneratedValue Long id;
 
-    private FormType formType;
+    @JsonProperty("form")
+    private String formType;
 
     @Column(name = "return_year")
     private int returnYear;
@@ -25,7 +26,7 @@ public class Return {
     private Long  userId;
 
     public Return() {}
-    public Return(Long userId, FormType formType, int returnYear, Double taxPayed) {
+    public Return(Long userId, String formType, int returnYear, Double taxPayed) {
         this.userId = userId;
         this.formType = formType;
         this.returnYear = returnYear;
@@ -40,7 +41,7 @@ public class Return {
         return id;
     }
 
-    public FormType getForm() {
+    public String getForm() {
         return formType;
     }
 

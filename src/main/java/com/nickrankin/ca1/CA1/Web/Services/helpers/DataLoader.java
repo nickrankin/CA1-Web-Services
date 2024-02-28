@@ -26,7 +26,7 @@ public class DataLoader {
             log.info("Adding " + repo.save(new User("Joe Bloggs", "84 City St", "82745K", "123")));
             log.info("Adding " + repo.save(new User("Sean O'Brien", "3 town Road", "13244K", "123")));
             log.info("========================~~~~~~~~~~~~~~~~~~~~~~~~~~~~==============================");
-            log.info("Adding tax " + returnsRepo.save(new Return(1L, FormType.FORM_11, 2023, 2456.45)));
+            log.info("Adding tax " + returnsRepo.save(new Return(1L, FormType.FORM_11.toString(), 2023, 2456.45)));
 
         };
     }

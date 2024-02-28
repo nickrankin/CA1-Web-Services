@@ -6,14 +6,12 @@
 
                 <div class="alert alert-danger" v-if="this.error != ''">An error occurred! {{ this.error }}</div>
 
-                <form>
                 <label for="pps">PPS Number</label>
                 <input type="text" name="pps" id="pps" v-model="pps_no" class="form-control m-2">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" v-model="pin" class="form-control m-2">
 
                 <a href="#" class="btn btn-primary m-2" @click="doLogin()">Login</a>
-            </form>
             </div>
         </div>
 

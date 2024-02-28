@@ -11,7 +11,7 @@ public class Form {
     private String title;
     private int year;
 
-    private FormType name;
+    private String name;
 
     public String getTitle() {
         return title;
@@ -30,10 +30,10 @@ public class Form {
     }
 
     public String getName() {
-        return name.name();
+        return name;
     }
 
-    public void setName(FormType name) {
+    public void setName(String name) {
         this.name = name;
     }
 
